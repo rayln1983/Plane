@@ -71,7 +71,7 @@
         }
     }
 }
-//test
+//test pcpc
 - (BOOL)isCollision: (CGRect)rect1 :(CGRect)rect2{
     CGPoint point1 = rect1.origin;
     CGPoint point2 = rect2.origin;

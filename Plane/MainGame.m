@@ -79,10 +79,6 @@
     CGSize size2 = rect2.size;
     CGPoint actPoint = CGPointMake(fabs(point1.x-point2.x), fabs(point1.y-point2.y));
     CGPoint minPoint = CGPointMake(fabs(size1.width/2+size2.width/2), fabs(size1.height/2+size2.height/2));
-<<<<<<< HEAD
-=======
-    //NSLog(@"%f,%f  %f,%f",minPoint.x,actPoint.x,minPoint.y,minPoint.y);
->>>>>>> e3fb961e84af40c0302f274096ab3d7473e93404
     if (minPoint.x > actPoint.x && minPoint.y > actPoint.y) {
         return YES;
     }

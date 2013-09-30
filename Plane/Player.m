@@ -27,25 +27,18 @@
     return self;
 }
 
-- (void)fire{
-    [self createBulletType1];
-
+- (Bullet *)fire{
+    return [self createBulletType1];
 }
 
-- (CCSprite *)createBlueBullte{
-    return [CCSprite spriteWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(64, 235, 12, 20)];
-}
-
-- (CCSprite *)createRedBullte{
-    return [CCSprite spriteWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(109, 0, 12, 20)];
-}
-
-- (void)createBulletType1{
-    CCSprite *bullet = [self createRedBullte];
+- (Bullet *)createBulletType1{
+    Bullet *bullet = [[Bullet alloc] init];
+    [bullet createRedBullte];
     
-    [bullet setPosition:CGPointMake(position.x, position.y+43)];
-    [self addChild:bullet];
-    [bullet runAction:[CCMoveBy actionWithDuration:.4 position:CGPointMake(0, 500)]];
+    [bullet.sprite setPosition:CGPointMake(position.x, position.y+43)];
+    [self addChild:bullet.sprite];
+    [bullet.sprite runAction:[CCMoveBy actionWithDuration:.4 position:CGPointMake(0, 500)]];
+    return bullet;
 }
 
 @end

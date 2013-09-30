@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameObject.h"
+#import "Bullet.h"
 
 @interface Player : GameObject {
     //int life;
     //CGPoint position;
 }
 @property (nonatomic, strong) CCSprite *player;
-@property (nonatomic, strong) CCSprite *bullet;
+@property (nonatomic, strong) Bullet *bullet;
 
-
-- (void) fire;
+- (CCSprite *) fire;
 @end

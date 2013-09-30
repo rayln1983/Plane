@@ -11,6 +11,7 @@
 #import "Background.h"
 #import "Player.h"
 #import "EnemyBigPlane.h"
+#import "EnemyMiddlePlane.h"
 #import "GameObject.h"
 
 @implementation MainGame
@@ -18,7 +19,9 @@
 - (id)init{
     self = [super init];
     if(self){
-        [self setEnemyList:[NSMutableArray array]];
+        self.removeList = [NSMutableArray array];
+        self.enemyList = [NSMutableArray array];
+        self.bulletList = [NSMutableArray array];
         [self createSprite];
         [self createEnemy];
         [self schedule:@selector(update) interval:0.05];
@@ -37,32 +40,36 @@
 }
 
 - (void)fire{
-    [self.player fire];
+    [self.bulletList addObject:[self.player fire]];
+    NSLog(@"===%zi", [self.bulletList count]);
 }
 
 - (void)createEnemy{
     EnemyBigPlane *big = [[EnemyBigPlane alloc] init];
     [self addChild:big];
     [self.enemyList addObject:big];
+    
+    EnemyMiddlePlane *mid = [[EnemyMiddlePlane alloc] init];
+    [self addChild:mid];
+    [self.enemyList addObject:mid];
 }
 
 - (void)update{
-    
     for (GameObject *enemy in self.enemyList) {
         CGRect playerRect = CGRectMake(self.player.player.position.x, self.player.player.position.y, [self.player.player textureRect].size.width, [self.player.player textureRect].size.height);
         CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
         if([self isCollision:playerRect :enemyRect]){
             if([enemy handleCollision]){
-                
-                [self.enemyList removeObject:enemy];
+                [self.removeList addObject:enemy];
             }
-        
         }
     }
+    [self.enemyList removeObjectsInArray:self.removeList];
+    [self.removeList removeAllObjects];
     
-    for (GameObject *enemy in self.enemyList) {
-        CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
-        for (GameObject *bullet in self.bulletList) {
+    for (Bullet *bullet in self.bulletList) {
+        for (GameObject *enemy in self.enemyList) {
+            CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
             CGRect bulletRect = CGRectMake(bullet.sprite.position.x, bullet.sprite.position.y, [bullet.sprite textureRect].size.width, [bullet.sprite textureRect].size.height);
             if([self isCollision:bulletRect :enemyRect]){
                 BOOL destory = [enemy handleCollision];

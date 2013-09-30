@@ -15,6 +15,6 @@
 }
 @property (nonatomic, strong) CCSprite *sprite;
 @property (nonatomic, strong) CCSpriteBatchNode* batchNode;
-- (BOOL)handleCollision;
+- (int)handleCollision;
 - (CCSprite *)createSprite:(CGRect) rect;
 @end

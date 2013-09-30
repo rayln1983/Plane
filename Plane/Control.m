@@ -14,4 +14,13 @@
 
 // pause  x 173 y 146 w 23 h 23
 // play   x 213 y 142 w 27 h 28
+
+- (id)init{
+    self = [super init];
+    if(self){
+        
+    }
+    return self;
+}
+
 @end

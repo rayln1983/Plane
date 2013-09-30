@@ -11,4 +11,13 @@
 
 @implementation BuffBomb
 //x 142  y 131 w 30 h 47
+
+- (id)init{
+    self = [super init];
+    if(self){
+        
+    }
+    return self;
+}
+
 @end

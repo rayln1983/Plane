@@ -80,7 +80,6 @@
     
     CGPoint actPoint = CGPointMake(fabs(point1.x-point2.x), fabs(point1.y-point2.y));
     CGPoint minPoint = CGPointMake(fabs(size1.width/2+size2.width/2), fabs(size1.height/2+size2.height/2));
-    //NSLog(@"%f, %f   %f,%f",minPoint.x, actPoint.x,minPoint.y,actPoint.y);
     if (minPoint.x > actPoint.x && minPoint.y > actPoint.y) {
         return YES;
     }

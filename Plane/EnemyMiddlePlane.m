@@ -16,11 +16,13 @@
 - (id)init{
     self = [super init];
     if(self){
-        position = CGPointMake(150, 300);
-        
+        position = CGPointMake([Util random:35 :290], 600);
+
         self.sprite = [self createSprite:CGRectMake(128, 0, 69, 89)];
         self.position = position;
         [self addChild:self.sprite];
+        
+        [self.sprite runAction:[CCMoveBy actionWithDuration:10 position:CGPointMake(0, -700)]];
     }
     return self;
 }

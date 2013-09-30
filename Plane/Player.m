@@ -17,7 +17,7 @@
     self = [super init];
     if(self){
         life = 1;
-        position =CGPointMake(150, 150);
+        position =CGPointMake(150, 50);
         
         self.player = [self createSprite:CGRectMake(64, 168, 64, 68)];
         [self.player setPosition:position];
@@ -37,8 +37,9 @@
     
     [bullet.sprite setPosition:CGPointMake(position.x, position.y+43)];
     [self addChild:bullet.sprite];
-    [bullet.sprite runAction:[CCMoveBy actionWithDuration:.4 position:CGPointMake(0, 500)]];
+    [bullet.sprite runAction:[CCMoveBy actionWithDuration:.3 position:CGPointMake(0, 500)]];
     return bullet;
 }
+
 
 @end

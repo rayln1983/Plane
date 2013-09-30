@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameObject.h"
+#import "Util.h"
 
 @interface EnemyMiddlePlane : GameObject {
     

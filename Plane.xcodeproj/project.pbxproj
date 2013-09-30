@@ -13,6 +13,8 @@
 		2435371817F7F9DC00147318 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371717F7F9DC00147318 /* Player.m */; };
 		2435371E17F8152B00147318 /* EnemyBigPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371D17F8152B00147318 /* EnemyBigPlane.m */; };
 		2448F5B817F99BD70095E68C /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448F5B717F99BD70095E68C /* Bullet.m */; };
+		2459E47A17F9DCB10058DB2E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459E47917F9DCB10058DB2E /* Util.m */; };
+		2459E47C17F9E1750058DB2E /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2459E47B17F9E1750058DB2E /* config.plist */; };
 		24A9C72617F7EE28006785F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72517F7EE28006785F3 /* QuartzCore.framework */; };
 		24A9C72817F7EE28006785F3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72717F7EE28006785F3 /* OpenGLES.framework */; };
 		24A9C72A17F7EE28006785F3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72917F7EE28006785F3 /* OpenAL.framework */; };
@@ -208,6 +210,9 @@
 		2435371D17F8152B00147318 /* EnemyBigPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyBigPlane.m; sourceTree = "<group>"; };
 		2448F5B617F99BD60095E68C /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		2448F5B717F99BD70095E68C /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
+		2459E47817F9DCB10058DB2E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		2459E47917F9DCB10058DB2E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		2459E47B17F9E1750058DB2E /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		24A9C72217F7EE28006785F3 /* Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A9C72517F7EE28006785F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		24A9C72717F7EE28006785F3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -577,6 +582,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2459E47717F9DC8E0058DB2E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2459E47817F9DCB10058DB2E /* Util.h */,
+				2459E47917F9DCB10058DB2E /* Util.m */,
+				2459E47B17F9E1750058DB2E /* config.plist */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		24A9C71917F7EE28006785F3 = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +628,7 @@
 		24A9C73717F7EE28006785F3 /* Plane */ = {
 			isa = PBXGroup;
 			children = (
+				2459E47717F9DC8E0058DB2E /* Util */,
 				24A9C99317F7F03F006785F3 /* Sprite */,
 				24A9C99217F7F024006785F3 /* Scene */,
 				24A9C8AF17F7EE2A006785F3 /* AppDelegate.h */,
@@ -1296,6 +1312,7 @@
 				24A9C98C17F7EF36006785F3 /* plane.png in Resources */,
 				24A9C99017F7EF47006785F3 /* Main.ccbi in Resources */,
 				24A9C99117F7EF47006785F3 /* StartMenu.ccbi in Resources */,
+				2459E47C17F9E1750058DB2E /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1446,6 +1463,7 @@
 				24E0680F17F941CC0023A5CB /* EnemySmallPlane.m in Sources */,
 				24E0681217F943DB0023A5CB /* Control.m in Sources */,
 				2448F5B817F99BD70095E68C /* Bullet.m in Sources */,
+				2459E47A17F9DCB10058DB2E /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

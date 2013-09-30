@@ -14,9 +14,10 @@
     
 }
 
-@property (nonatomic, strong) NSMutableArray *enemyList;
-@property (nonatomic, strong) NSMutableArray *bulletList;
-@property (nonatomic, strong) NSMutableArray *removeList;
+@property (atomic, strong) NSMutableArray *enemyList;
+@property (atomic, strong) NSMutableArray *bulletList;
+@property (atomic, strong) NSMutableArray *removeEnemyList;
+@property (atomic, strong) NSMutableArray *removeBulletList;
 @property (nonatomic, strong) Player *player;
 
 @end

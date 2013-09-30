@@ -20,6 +20,7 @@
         position = CGPointMake(150, 300);
         
         self.sprite = [self createSprite:CGRectMake(0, 0, 113, 164)];
+        self.bomb = [CCSpriteFrame frameWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(143, 91, 36, 39)];
         [self.sprite setPosition:position];
         [self addChild:self.sprite];
         [self.sprite runAction:[CCMoveTo actionWithDuration:20 position:CGPointMake(150, 0)]];
@@ -31,6 +32,8 @@
     life--;
     if(life <= 0){
         [self.sprite stopAllActions];
+        [self.sprite setDisplayFrame:self.bomb];
+        //[NSThread sleepForTimeInterval:.5];
         return YES;
     }
     return NO;

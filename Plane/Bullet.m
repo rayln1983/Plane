@@ -20,7 +20,7 @@
 }
 - (int)handleCollision{
     [self.sprite stopAllActions];
-    return 2;
+    return YES;
 }
 - (void)createBlueBullte{
     self.sprite = [CCSprite spriteWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(64, 235, 12, 20)];

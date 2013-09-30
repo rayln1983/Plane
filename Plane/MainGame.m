@@ -21,7 +21,7 @@
         [self setEnemyList:[NSMutableArray array]];
         [self createSprite];
         [self createEnemy];
-        [self schedule:@selector(update) interval:.05];
+        [self schedule:@selector(update) interval:0.05];
     }
     return self;
 };
@@ -54,18 +54,19 @@
         if([self isCollision:playerRect :enemyRect]){
             if([enemy handleCollision]){
                 
+                [self.enemyList removeObject:enemy];
             }
+        
         }
     }
     
-    for (GameObject *bullet in self.bulletList) {
-        for (GameObject *enemy in self.enemyList) {
-            CGRect playerRect = CGRectMake(bullet.sprite.position.x, bullet.sprite.position.y, [bullet.sprite textureRect].size.width, [bullet.sprite textureRect].size.height);
-            CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
-            if([self isCollision:playerRect :enemyRect]){
-                if([enemy handleCollision]){
-                    
-                }
+    for (GameObject *enemy in self.enemyList) {
+        CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
+        for (GameObject *bullet in self.bulletList) {
+            CGRect bulletRect = CGRectMake(bullet.sprite.position.x, bullet.sprite.position.y, [bullet.sprite textureRect].size.width, [bullet.sprite textureRect].size.height);
+            if([self isCollision:bulletRect :enemyRect]){
+                BOOL destory = [enemy handleCollision];
+                [bullet handleCollision];
             }
         }
     }
@@ -74,13 +75,11 @@
 - (BOOL)isCollision: (CGRect)rect1 :(CGRect)rect2{
     CGPoint point1 = rect1.origin;
     CGPoint point2 = rect2.origin;
-    
     CGSize size1 = rect1.size;
     CGSize size2 = rect2.size;
-    
     CGPoint actPoint = CGPointMake(fabs(point1.x-point2.x), fabs(point1.y-point2.y));
     CGPoint minPoint = CGPointMake(fabs(size1.width/2+size2.width/2), fabs(size1.height/2+size2.height/2));
-    //NSLog(@"%f, %f   %f,%f",minPoint.x, actPoint.x,minPoint.y,actPoint.y);
+    //NSLog(@"%f,%f  %f,%f",minPoint.x,actPoint.x,minPoint.y,minPoint.y);
     if (minPoint.x > actPoint.x && minPoint.y > actPoint.y) {
         return YES;
     }

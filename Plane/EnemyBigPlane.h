@@ -14,4 +14,5 @@
     
 }
 //@property (nonatomic, strong) CCSprite *sprite;
+@property (nonatomic, strong) CCSpriteFrame *bomb;
 @end

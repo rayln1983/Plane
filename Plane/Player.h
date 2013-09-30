@@ -19,4 +19,5 @@
 @property (nonatomic, strong) Bullet *bullet;
 
 - (CCSprite *) fire;
+
 @end

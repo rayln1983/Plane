@@ -19,7 +19,8 @@
 - (id)init{
     self = [super init];
     if(self){
-        self.removeList = [NSMutableArray array];
+        self.removeEnemyList = [NSMutableArray array];
+        self.removeBulletList = [NSMutableArray array];
         self.enemyList = [NSMutableArray array];
         self.bulletList = [NSMutableArray array];
         [self createSprite];
@@ -60,12 +61,14 @@
         CGRect enemyRect = CGRectMake(enemy.sprite.position.x, enemy.sprite.position.y, enemy.sprite.textureRect.size.width, enemy.sprite.textureRect.size.height);
         if([self isCollision:playerRect :enemyRect]){
             if([enemy handleCollision]){
-                [self.removeList addObject:enemy];
+                [self.removeEnemyList addObject:enemy];
+                //[self removeChild:enemy cleanup:NO];
+                //[self removeChild:self.player cleanup:YES];
             }
         }
     }
-    [self.enemyList removeObjectsInArray:self.removeList];
-    [self.removeList removeAllObjects];
+    [self.enemyList removeObjectsInArray:self.removeEnemyList];
+    [self.removeEnemyList removeAllObjects];
     
     for (Bullet *bullet in self.bulletList) {
         for (GameObject *enemy in self.enemyList) {
@@ -73,7 +76,10 @@
             CGRect bulletRect = CGRectMake(bullet.sprite.position.x, bullet.sprite.position.y, [bullet.sprite textureRect].size.width, [bullet.sprite textureRect].size.height);
             if([self isCollision:bulletRect :enemyRect]){
                 BOOL destory = [enemy handleCollision];
-                [bullet handleCollision];
+                if([bullet handleCollision]){
+                    [self.player removeChild:bullet.sprite cleanup:YES];
+                    [self.bulletList removeObject:bullet];
+                }
             }
         }
     }

@@ -14,7 +14,7 @@
 #import "GameObject.h"
 
 @implementation MainGame
-
+ 
 - (id)init{
     self = [super init];
     if(self){

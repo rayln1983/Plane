@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2403E48A17F8F5CA00EA7E87 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403E48917F8F5CA00EA7E87 /* Bullet.m */; };
 		241E6FD917F86E2B001203AC /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 241E6FD817F86E2B001203AC /* GameObject.m */; };
 		2435371217F7F3CD00147318 /* MainGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371117F7F3CD00147318 /* MainGame.m */; };
 		2435371517F7F5B400147318 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371417F7F5B400147318 /* Background.m */; };
 		2435371817F7F9DC00147318 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371717F7F9DC00147318 /* Player.m */; };
 		2435371E17F8152B00147318 /* EnemyBigPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435371D17F8152B00147318 /* EnemyBigPlane.m */; };
+		2448F5B817F99BD70095E68C /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2448F5B717F99BD70095E68C /* Bullet.m */; };
 		24A9C72617F7EE28006785F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72517F7EE28006785F3 /* QuartzCore.framework */; };
 		24A9C72817F7EE28006785F3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72717F7EE28006785F3 /* OpenGLES.framework */; };
 		24A9C72A17F7EE28006785F3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A9C72917F7EE28006785F3 /* OpenAL.framework */; };
@@ -196,8 +196,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2403E48817F8F5CA00EA7E87 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
-		2403E48917F8F5CA00EA7E87 /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
 		241E6FD717F86E2B001203AC /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		241E6FD817F86E2B001203AC /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		2435371017F7F3CD00147318 /* MainGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGame.h; sourceTree = "<group>"; };
@@ -208,6 +206,8 @@
 		2435371717F7F9DC00147318 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		2435371C17F8152A00147318 /* EnemyBigPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyBigPlane.h; sourceTree = "<group>"; };
 		2435371D17F8152B00147318 /* EnemyBigPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyBigPlane.m; sourceTree = "<group>"; };
+		2448F5B617F99BD60095E68C /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		2448F5B717F99BD70095E68C /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
 		24A9C72217F7EE28006785F3 /* Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A9C72517F7EE28006785F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		24A9C72717F7EE28006785F3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1193,8 +1193,6 @@
 				2435371D17F8152B00147318 /* EnemyBigPlane.m */,
 				241E6FD717F86E2B001203AC /* GameObject.h */,
 				241E6FD817F86E2B001203AC /* GameObject.m */,
-				2403E48817F8F5CA00EA7E87 /* Bullet.h */,
-				2403E48917F8F5CA00EA7E87 /* Bullet.m */,
 				24E0680417F940140023A5CB /* BuffBullet.h */,
 				24E0680517F940140023A5CB /* BuffBullet.m */,
 				24E0680717F9402F0023A5CB /* BuffBomb.h */,
@@ -1205,6 +1203,8 @@
 				24E0680E17F941CC0023A5CB /* EnemySmallPlane.m */,
 				24E0681017F943DA0023A5CB /* Control.h */,
 				24E0681117F943DA0023A5CB /* Control.m */,
+				2448F5B617F99BD60095E68C /* Bullet.h */,
+				2448F5B717F99BD70095E68C /* Bullet.m */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
@@ -1440,12 +1440,12 @@
 				2435371817F7F9DC00147318 /* Player.m in Sources */,
 				2435371E17F8152B00147318 /* EnemyBigPlane.m in Sources */,
 				241E6FD917F86E2B001203AC /* GameObject.m in Sources */,
-				2403E48A17F8F5CA00EA7E87 /* Bullet.m in Sources */,
 				24E0680617F940140023A5CB /* BuffBullet.m in Sources */,
 				24E0680917F9402F0023A5CB /* BuffBomb.m in Sources */,
 				24E0680C17F941060023A5CB /* EnemyMiddlePlane.m in Sources */,
 				24E0680F17F941CC0023A5CB /* EnemySmallPlane.m in Sources */,
 				24E0681217F943DB0023A5CB /* Control.m in Sources */,
+				2448F5B817F99BD70095E68C /* Bullet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

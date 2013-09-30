@@ -13,5 +13,5 @@
 @interface EnemyBigPlane : GameObject {
     
 }
-
+//@property (nonatomic, strong) CCSprite *sprite;
 @end

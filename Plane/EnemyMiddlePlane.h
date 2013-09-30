@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameObject.h"
 
-@interface EnemyMiddlePlane : CCNode {
+@interface EnemyMiddlePlane : GameObject {
     
 }
-
+//@property (nonatomic, strong) CCSprite *sprite;
 @end

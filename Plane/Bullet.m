@@ -11,15 +11,22 @@
 
 @implementation Bullet
 
-- (id)init{
-    self = [super self];
+-(id)init{
+    self = [super init];
     if(self){
-        
-        self.bullet = [self createSprite:CGRectMake(64, 235, 8, 16)];
-        [self.bullet setPosition:CGPointMake(100, 100)];
-        [self addChild:self.bullet];
+        self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"plane.png"];
     }
     return self;
 }
+- (int)handleCollision{
+    [self.sprite stopAllActions];
+    return 2;
+}
+- (void)createBlueBullte{
+    self.sprite = [CCSprite spriteWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(64, 235, 12, 20)];
+}
 
+- (void)createRedBullte{
+    self.sprite = [CCSprite spriteWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(109, 0, 12, 20)];
+}
 @end

@@ -27,7 +27,7 @@
     return self;
 }
 
-- (BOOL)handleCollision{
+- (int)handleCollision{
     life--;
     if(life <= 0){
         [self.sprite stopAllActions];

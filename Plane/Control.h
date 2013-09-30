@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameObject.h"
 
-@interface Control : CCNode {
+@interface Control : GameObject {
     
 }
 

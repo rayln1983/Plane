@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "GameObject.h"
 
-@interface Bullet : GameObject {
+@interface Bullet : CCSprite {
     
 }
-@property (nonatomic, strong) CCSprite *bullet;
+@property (nonatomic, strong) CCSprite *sprite;
+
+- (int)handleCollision;
+- (void)createBlueBullte;
+- (void)createRedBullte;
 @end

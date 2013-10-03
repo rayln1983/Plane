@@ -8,13 +8,12 @@
 
 #import "StartMenu.h"
 #import "CCBReader.h"
-
+#import "MainGame.h"
 
 @implementation StartMenu
 
 - (void)startGame:(id)sender{
-    CCScene *scene = [CCBReader sceneWithNodeGraphFromFile:@"Main.ccbi"];
-    	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:scene withColor:ccc3(195, 199, 202)]];
+    	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainGame scene] withColor:ccc3(195, 199, 202)]];
 };
 
 @end

@@ -10,9 +10,13 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 #import "Util.h"
+#import "BombEffect.h"
+
 
 @interface EnemyMiddlePlane : GameObject {
     
 }
 //@property (nonatomic, strong) CCSprite *sprite;
+@property (nonatomic, strong) BombEffect *bomb;
+
 @end

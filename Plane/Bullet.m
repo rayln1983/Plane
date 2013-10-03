@@ -11,10 +11,21 @@
 
 @implementation Bullet
 
++(id)bulletWithBatch: (CCSpriteBatchNode *)batch{
+    Bullet *bullet = [[[Bullet alloc] initWithSpriteBatch:batch] autorelease];
+    return bullet;
+}
 -(id)init{
     self = [super init];
     if(self){
         self.batchNode = [CCSpriteBatchNode batchNodeWithFile:@"plane.png"];
+    }
+    return self;
+}
+-(id)initWithSpriteBatch:(CCSpriteBatchNode *)batch{
+    self = [super init];
+    if(self){
+        self.batchNode = batch;
     }
     return self;
 }

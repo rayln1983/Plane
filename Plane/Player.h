@@ -11,7 +11,7 @@
 #import "GameObject.h"
 #import "Bullet.h"
 
-@interface Player : GameObject {
+@interface Player : GameObject <CCTargetedTouchDelegate, CCTouchDelegate> {
     //int life;
     //CGPoint position;
 }

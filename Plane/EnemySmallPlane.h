@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameObject.h"
+#import "BombEffect.h"
+
 
 @interface EnemySmallPlane : GameObject {
     
 }
+@property (nonatomic, strong) BombEffect *bomb;
 
 @end

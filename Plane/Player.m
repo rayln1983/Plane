@@ -32,10 +32,10 @@
 }
 
 - (Bullet *)createBulletType1{
-    Bullet *bullet = [[Bullet alloc] init];
+    Bullet *bullet = [[[Bullet alloc] init] autorelease];
     [bullet createRedBullte];
     
-    [bullet.sprite setPosition:CGPointMake(position.x, position.y+43)];
+    [bullet.sprite setPosition:CGPointMake(self.player.position.x, self.player.position.y+43)];
     [self addChild:bullet.sprite];
     [bullet.sprite runAction:[CCMoveBy actionWithDuration:.3 position:CGPointMake(0, 500)]];
     return bullet;

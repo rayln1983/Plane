@@ -14,6 +14,7 @@
 }
 @property (nonatomic, strong) CCSprite *sprite;
 
++ (void) bullet;
 - (int)handleCollision;
 - (void)createBlueBullte;
 - (void)createRedBullte;

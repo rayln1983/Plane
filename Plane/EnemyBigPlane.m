@@ -7,6 +7,7 @@
 //
 
 #import "EnemyBigPlane.h"
+#import "Util.h"
 
 
 @implementation EnemyBigPlane
@@ -17,13 +18,14 @@
     self = [super init];
     if(self){
         life = 10;
-        position = CGPointMake(150, 300);
+        int orginX = [Util random:35 :290];
+        position = CGPointMake(orginX, 600);
         
         self.sprite = [self createSprite:CGRectMake(0, 0, 113, 164)];
-        self.bomb = [CCSpriteFrame frameWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(143, 91, 36, 39)];
+        self.bomb = [BombEffect bombEffect:self.batchNode];
         [self.sprite setPosition:position];
         [self addChild:self.sprite];
-        [self.sprite runAction:[CCMoveTo actionWithDuration:20 position:CGPointMake(150, 0)]];
+        [self.sprite runAction:[CCMoveTo actionWithDuration:20 position:CGPointMake(orginX, -100)]];
     }
     return self;
 }
@@ -32,7 +34,9 @@
     life--;
     if(life <= 0){
         [self.sprite stopAllActions];
-        [self.sprite setDisplayFrame:self.bomb];
+        //[self.sprite setDisplayFrame:self.bomb];
+        [self.bomb runMiddleEffect:self.sprite];
+        //[self.sprite ]
         //[NSThread sleepForTimeInterval:.5];
         return YES;
     }

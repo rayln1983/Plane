@@ -20,4 +20,5 @@
 @property (atomic, strong) NSMutableArray *removeBulletList;
 @property (nonatomic, strong) Player *player;
 
++ (CCScene *) scene;
 @end

@@ -16,19 +16,30 @@
 - (id)init{
     self = [super init];
     if(self){
-        position = CGPointMake([Util random:35 :290], 600);
-
-        self.sprite = [self createSprite:CGRectMake(128, 0, 69, 89)];
-        self.position = position;
+        life = 3;
+        int orginX = [Util random:35 :290];
+        position = CGPointMake(orginX, 600);
+        //self.bomb = [CCSpriteFrame frameWithTexture:[[self.batchNode textureAtlas] texture] rect:CGRectMake(143, 91, 36, 39)];
+        self.bomb = [BombEffect bombEffect:self.batchNode];
+        self.sprite = [self createSprite:CGRectMake(131, 0, 67, 90)];
+                //[self.sprite setColor:ccBLACK];
+        self.sprite.position = position;
         [self addChild:self.sprite];
-        
-        [self.sprite runAction:[CCMoveBy actionWithDuration:10 position:CGPointMake(0, -700)]];
+        [self.sprite runAction:[CCMoveTo actionWithDuration:10 position:CGPointMake(orginX, -100)]];
     }
     return self;
 }
 
 - (int)handleCollision{
-    return 0;
+    life--;
+    if(life <= 0){
+        [self.sprite stopAllActions];
+        //[self.sprite setDisplayFrame:self.bomb];
+        [self.bomb runMiddleEffect:self.sprite];
+        //[NSThread sleepForTimeInterval:.5];
+        return YES;
+    }
+    return NO;
 }
 
 @end
